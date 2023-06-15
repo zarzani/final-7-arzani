@@ -1,0 +1,59 @@
+h1,h2,h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    padding: 20px;
+    border-radius: 10px;
+    border: 10px solid rosybrown;
+    
+    margin:0 auto;
+    text-align: center;
+    width: 800px;
+}
+
+h1 {
+    color: red;
+
+}
+#weather-imag {
+    position: relative;
+    width: 400px;
+}
+#temperature{
+    font-size: 80px;
+    font-weight: bold;
+}
+#temperature-unit {
+    color: blue;
+    vertical-align: super;
+
+}
+#celecius {
+    vertical-align: super;
+
+}
+li { color: chocolate;
+    margin-top: 80px;
+    font-weight: bolder;
+
+}
+#form-inpyt {
+    display: block;
+    margin: 0 auto;
+    width: 800px;
+    font-size: large;
+}
+#input-submit {
+    color: rgba(255, 0, 17, 0.817);
+    font-size: 20px;
+    background-color:chartreuse
+    display: block;
+    margin: auto;
+    transition: all  ease-in-out;
+    padding: 5px;
+    border: 2px solid red;
+}
+button:hover {
+    background-color: rgb(222, 135, 155);
+    cursor: pointer;
+
+}
