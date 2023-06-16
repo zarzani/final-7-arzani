@@ -39,11 +39,12 @@ li { color: chocolate;
     font-size: 20px;
 
 }
-#form-inpyt {
+#formInput{
     display: block;
     margin: 0 auto;
-    width: 800px;
+    width: 600px;
     font-size: large;
+    font-size: 20px;
 }
 #input-submit {
     color: rgba(255, 0, 17, 0.817);
@@ -54,6 +55,7 @@ li { color: chocolate;
     transition: all  ease-in-out;
     padding: 5px;
     border: 2px solid red;
+    width: 100px;
 }
 button:hover {
     background-color: rgb(222, 135, 155);
