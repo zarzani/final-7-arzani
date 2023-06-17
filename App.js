@@ -34,22 +34,16 @@ imag.setAttribute("alt", response.data.weather[0].description);
 function showCity(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#formInput");
-    console.log(cityInputElement.value);
+    let apiKey = '34f95b5e87d4683b0836302b1b590869';
+    let city = "Sydney";
+    
+    
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputElement.value}&appid=34f95b5e87d4683b0836302b1b590869&units=metric`;
+    
+    axios.get(apiUrl).then(showData);
 }
     
 
-   let apiKey = '34f95b5e87d4683b0836302b1b590869';
-   let city = "Sydney";
-   
-
-let apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=Sydney&appid=34f95b5e87d4683b0836302b1b590869&units=metric';
-
-axios.get(apiUrl).then(showData);
 
 let form = document.querySelector("#form-inpyt");
 form.addEventListener("submit", showCity);
-
- 
-
-
-
