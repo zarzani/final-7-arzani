@@ -10,6 +10,32 @@ let month = months[now.getMonth()];
 h3.innerHTML = (day)+"&nbsp" +" "+ (hour)+ ":"+ (minutes)+"&nbsp"+" " +(month)+":"+ (date);
 
 
+function ShowForecast() {
+    let forecastElement = document.querySelector("#forcast");
+    
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"]
+
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function (day) {
+        
+        forecastHTML = forecastHTML + `<div class="col-2" >
+        <div id="forcast-date">${day}</div>
+        <img  id="forcast-imag" src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"/>
+        <div class="forcast-temperature" id="forcast-min-max-tem">
+            <span class="forcast-temperature-max" id="tem-max">18°C |</span>
+            <span class="forcast-temperature-min">15°C</span>
+
+        </div>
+    </div>`;
+    });
+   
+     forecastHTML = forecastHTML + `</div>`;
+     forecastElement.innerHTML = forecastHTML;
+     console.log(forecastHTML);
+}
+
+
+
 function showData(response) {
     console.log(response.data);
    
@@ -47,3 +73,5 @@ function showCity(event) {
 
 let form = document.querySelector("#form-inpyt");
 form.addEventListener("submit", showCity);
+
+ShowForecast(); 

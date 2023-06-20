@@ -62,3 +62,25 @@ button:hover {
     cursor: pointer;
 
 }
+#forcast-date-image-tem {
+    padding: 40px;
+    
+}
+
+#forcast-date {
+    color: red;
+    font-size: 30px;
+
+}
+#forcast-imag {
+    width: 50px;
+    margin-top: 20px;
+}
+#forcast-min-max-tem {
+    color: brown;
+    
+}
+#tem-max {
+    font-weight: bolder;
+}
+
