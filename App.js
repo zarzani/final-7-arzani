@@ -9,7 +9,7 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 let month = months[now.getMonth()]; 
 h3.innerHTML = (day)+"&nbsp" +" "+ (hour)+ ":"+ (minutes)+"&nbsp"+" " +(month)+":"+ (date);
 
-
+// writing this part was hard
 function ShowForecast() {
     let forecastElement = document.querySelector("#forcast");
     
