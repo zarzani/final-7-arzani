@@ -10,34 +10,44 @@ let month = months[now.getMonth()];
 h3.innerHTML = (day)+"&nbsp" +" "+ (hour)+ ":"+ (minutes)+"&nbsp"+" " +(month)+":"+ (date);
 
 // writing this part was hard
-function ShowForecast() {
+function ShowForecast(response) {
+    let forecast = response.data.daily;
+
     let forecastElement = document.querySelector("#forcast");
     
-    let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"]
+   
 
     let forecastHTML = `<div class="row">`;
-    days.forEach(function (day) {
+    forecast.forEach(function (forecastDay, index) {
+        if (index <6) {
         
         forecastHTML = forecastHTML + `<div class="col-2" >
-        <div id="forcast-date">${day}</div>
-        <img  id="forcast-imag" src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"/>
+        <div id="forcast-date">${forecastDay.dt}</div>
+        <img  id="forcast-imag" src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon}@2x.png"
+          alt=""
+          width="42"/>
+          
         <div class="forcast-temperature" id="forcast-min-max-tem">
-            <span class="forcast-temperature-max" id="tem-max">18°C |</span>
-            <span class="forcast-temperature-min">15°C</span>
+            <span class="forcast-temperature-max" id="tem-max"> ${forecastDay.temp.max}°C |</span>
+            <span class="forcast-temperature-min"> ${forecastDay.temp.min}°C</span>
 
         </div>
     </div>`;
+        }
     });
+}
    
      forecastHTML = forecastHTML + `</div>`;
      forecastElement.innerHTML = forecastHTML;
      
-}
+
 function getforecast(coordinates) {
     
     let apiKey = `34f95b5e87d4683b0836302b1b590869`;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     console.log(apiUrl);
+    axios.get(apiUrl).then(ShowForecast);
 }
 
 
@@ -84,4 +94,4 @@ function showCity(event) {
 let form = document.querySelector("#form-inpyt");
 form.addEventListener("submit", showCity);
 
-ShowForecast(); 
+
